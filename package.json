@@ -1,0 +1,25 @@
+{
+  "name": "ggt-design-kit",
+  "version": "0.1.0",
+  "description": "Plain-CSS design kit for Golden Goose Tools — dark surfaces, hairlines, Fraunces + Plex, shared tool chrome. No Tailwind.",
+  "license": "MIT",
+  "main": "src/index.css",
+  "style": "src/index.css",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GooseyPrime/ggt-design-kit.git"
+  },
+  "keywords": [
+    "golden-goose-tools",
+    "css",
+    "design-kit",
+    "no-tailwind"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

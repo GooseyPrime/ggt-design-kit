@@ -1,0 +1,122 @@
+/* Shared tool chrome — hero, input, result, locked tally, paywall, trust */
+
+.ggt-eyebrow {
+  margin: 0 0 16px;
+  color: var(--ggt-accent);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.ggt-hero {
+  max-width: 40rem;
+  padding: 64px 0 36px;
+}
+
+.ggt-lede {
+  margin: 14px 0 0;
+  color: var(--ggt-mist);
+  font-size: clamp(1rem, 2vw, 1.12rem);
+}
+
+.ggt-input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 640px;
+}
+
+.ggt-input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--ggt-hairline);
+  border-radius: var(--ggt-radius-md);
+  background: var(--ggt-ink);
+  color: var(--ggt-paper);
+  font: inherit;
+  outline: none;
+}
+
+.ggt-input:focus {
+  border-color: var(--ggt-accent);
+}
+
+.ggt-btn {
+  cursor: pointer;
+  padding: 14px 22px;
+  border: 1px solid var(--ggt-accent);
+  border-radius: var(--ggt-radius-md);
+  background: var(--ggt-slate);
+  color: var(--ggt-paper);
+  font: inherit;
+  letter-spacing: 0.02em;
+}
+
+.ggt-btn:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--ggt-accent) 14%, var(--ggt-slate));
+}
+
+.ggt-btn:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.ggt-result,
+.ggt-tally,
+.ggt-paywall {
+  margin-top: 24px;
+  padding: 22px;
+  border: 1px solid var(--ggt-hairline);
+  border-radius: var(--ggt-radius-lg);
+  background: var(--ggt-ink);
+}
+
+.ggt-tally--locked {
+  position: relative;
+  overflow: hidden;
+}
+
+.ggt-tally--locked::after {
+  content: "Unlock full tally";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--ggt-void) 72%, transparent);
+  color: var(--ggt-paper);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ggt-paywall {
+  border-color: color-mix(in srgb, var(--ggt-accent) 50%, var(--ggt-hairline));
+}
+
+.ggt-paywall .ggt-price {
+  margin: 8px 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 2.4rem;
+  letter-spacing: -0.03em;
+}
+
+.ggt-trust {
+  margin: 18px 0 0;
+  color: var(--ggt-mist);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 720px) {
+  .ggt-input-row {
+    flex-direction: column;
+  }
+
+  .ggt-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,47 @@
+/* ggt-design-kit base — no Tailwind */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.ggt-root {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--ggt-void);
+  color: var(--ggt-paper);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ggt-wrap {
+  max-width: var(--ggt-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ggt-root h1,
+.ggt-root h2,
+.ggt-root h3 {
+  margin: 0;
+  color: var(--ggt-paper);
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.ggt-root h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.ggt-root a {
+  color: var(--ggt-paper);
+  text-decoration-color: color-mix(in srgb, var(--ggt-accent) 65%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+.ggt-root a:hover {
+  color: var(--ggt-accent);
+}

@@ -1,0 +1,18 @@
+/* ggt-design-kit tokens — plain CSS only */
+:root {
+  --ggt-void: #0b0909;
+  --ggt-ink: #1a1414;
+  --ggt-slate: #241c1c;
+  --ggt-hairline: rgba(236, 220, 214, 0.12);
+  --ggt-paper: #f3ebe6;
+  --ggt-mist: rgba(243, 235, 230, 0.62);
+  --ggt-accent: #a35a4a; /* default; tools override */
+  --ggt-crit: #b07070;
+  --ggt-warn: #c4a27a;
+  --ggt-good: #7d9b7a;
+  --ggt-radius-sm: 2px;
+  --ggt-radius-md: 4px;
+  --ggt-radius-lg: 6px;
+  --ggt-max: 1100px;
+  color-scheme: dark;
+}
