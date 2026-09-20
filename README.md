@@ -32,9 +32,10 @@ npm install github:GooseyPrime/ggt-design-kit#v0.1.0
 
 ## Use in a Next.js / tool app
 
-1. Load fonts (shop already does this via `next/font`):
+1. Load fonts in your root layout (shop already does this via `next/font`):
 
 ```ts
+import type { ReactNode } from "react";
 import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 
 const display = Fraunces({ subsets: ["latin"], variable: "--font-display" });
@@ -48,6 +49,14 @@ const mono = IBM_Plex_Mono({
   weight: ["400", "500"],
   variable: "--font-mono",
 });
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+      <body>{children}</body>
+    </html>
+  );
+}
 ```
 
 2. Import the kit once (e.g. root layout or tool `globals.css`):
