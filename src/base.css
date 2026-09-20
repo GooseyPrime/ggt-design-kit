@@ -38,6 +38,7 @@
 
 .ggt-root a {
   color: var(--ggt-paper);
+  text-decoration-color: var(--ggt-accent);
   text-decoration-color: color-mix(in srgb, var(--ggt-accent) 65%, transparent);
   text-underline-offset: 0.18em;
 }

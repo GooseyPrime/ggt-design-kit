@@ -36,11 +36,16 @@
   background: var(--ggt-ink);
   color: var(--ggt-paper);
   font: inherit;
-  outline: none;
 }
 
 .ggt-input:focus {
   border-color: var(--ggt-accent);
+}
+
+.ggt-input:focus-visible,
+.ggt-btn:focus-visible {
+  outline: 2px solid var(--ggt-accent);
+  outline-offset: 2px;
 }
 
 .ggt-btn {

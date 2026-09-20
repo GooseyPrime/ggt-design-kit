@@ -64,21 +64,25 @@ const mono = IBM_Plex_Mono({
 3. Mark up with kit classes:
 
 ```html
-<header class="ggt-hero">
-  <p class="ggt-eyebrow">Golden Goose Tools</p>
-  <h1>Tool name</h1>
-  <p class="ggt-lede">One-line promise.</p>
-</header>
+<main class="ggt-root">
+  <div class="ggt-wrap">
+    <header class="ggt-hero">
+      <p class="ggt-eyebrow">Golden Goose Tools</p>
+      <h1>Tool name</h1>
+      <p class="ggt-lede">One-line promise.</p>
+    </header>
 
-<form class="ggt-input-row">
-  <input class="ggt-input" type="url" placeholder="https://…" />
-  <button class="ggt-btn" type="submit">Run</button>
-</form>
+    <form class="ggt-input-row">
+      <input class="ggt-input" type="url" placeholder="https://…" />
+      <button class="ggt-btn" type="submit">Run</button>
+    </form>
 
-<section class="ggt-result">…</section>
-<aside class="ggt-tally ggt-tally--locked">…</aside>
-<section class="ggt-paywall">…</section>
-<p class="ggt-trust">Paid once. Yours to keep. No account required for the free pass.</p>
+    <section class="ggt-result">…</section>
+    <aside class="ggt-tally ggt-tally--locked">…</aside>
+    <section class="ggt-paywall">…</section>
+    <p class="ggt-trust">Paid once. Yours to keep. No account required for the free pass.</p>
+  </div>
+</main>
 ```
 
 ## Tokens
