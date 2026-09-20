@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  package:
+    name: package
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate package.json
+        run: node -e "const p=require('./package.json'); if(!p.name||!p.main||!p.style) process.exit(1); console.log(p.name, p.version);"
+
+      - name: Ensure CSS entry exists
+        run: test -f src/index.css && test -s src/index.css
+
+      - name: Pack dry-run
+        run: npm pack --dry-run
