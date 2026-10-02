@@ -7,9 +7,18 @@
   --ggt-paper: #f3ebe6;
   --ggt-mist: rgba(243, 235, 230, 0.62);
   --ggt-accent: #a35a4a; /* default; tools override */
-  --ggt-crit: #b07070;
+  /* Readable variant of the accent for text on dark surfaces (AA). Themes set it. */
+  --ggt-accent-text: #d98f7c;
+  --ggt-heading: var(--ggt-paper);
+  --ggt-wash: var(--ggt-void);
+  --ggt-link: var(--ggt-paper);
+  --ggt-link-hover: var(--ggt-accent-text);
+  --ggt-btn-bg: var(--ggt-slate);
+  --ggt-btn-bg-hover: color-mix(in srgb, var(--ggt-accent) 14%, var(--ggt-slate));
+  --ggt-btn-fg: var(--ggt-paper);
+  --ggt-crit: #d08a8a;
   --ggt-warn: #c4a27a;
-  --ggt-good: #7d9b7a;
+  --ggt-good: #8aaa87;
   --ggt-radius-sm: 2px;
   --ggt-radius-md: 4px;
   --ggt-radius-lg: 6px;

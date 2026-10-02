@@ -1,12 +1,13 @@
 {
   "name": "ggt-design-kit",
-  "version": "0.1.0",
-  "description": "Plain-CSS design kit for Golden Goose Tools — dark surfaces, hairlines, Fraunces + Plex, shared tool chrome. No Tailwind.",
+  "version": "0.2.0",
+  "description": "Plain-CSS design kit for Golden Goose Tools — dark surfaces, hairlines, Fraunces + Plex, shared tool chrome, and one full-page colour theme per tool. No Tailwind.",
   "license": "MIT",
   "main": "src/index.css",
   "style": "src/index.css",
   "files": [
     "src",
+    "scripts",
     "README.md"
   ],
   "repository": {
@@ -21,5 +22,10 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "build:themes": "node scripts/build-themes.mjs",
+    "check:themes": "node scripts/build-themes.mjs --check",
+    "test": "node --test tests/"
   }
 }
