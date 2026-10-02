@@ -2,7 +2,7 @@
 
 .ggt-eyebrow {
   margin: 0 0 16px;
-  color: var(--ggt-accent);
+  color: var(--ggt-accent-text);
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 12px;
   letter-spacing: 0.18em;
@@ -53,14 +53,14 @@
   padding: 14px 22px;
   border: 1px solid var(--ggt-accent);
   border-radius: var(--ggt-radius-md);
-  background: var(--ggt-slate);
-  color: var(--ggt-paper);
+  background: var(--ggt-btn-bg);
+  color: var(--ggt-btn-fg);
   font: inherit;
   letter-spacing: 0.02em;
 }
 
 .ggt-btn:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--ggt-accent) 14%, var(--ggt-slate));
+  background: var(--ggt-btn-bg-hover);
 }
 
 .ggt-btn:disabled {
@@ -99,6 +99,7 @@
 
 .ggt-paywall {
   border-color: color-mix(in srgb, var(--ggt-accent) 50%, var(--ggt-hairline));
+  background: var(--ggt-wash);
 }
 
 .ggt-paywall .ggt-price {

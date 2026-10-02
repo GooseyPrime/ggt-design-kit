@@ -5,7 +5,7 @@ Installable **plain CSS** design kit for [Golden Goose Tools](https://github.com
 - Dark surfaces, hairline borders, **no drop shadows**
 - **Fraunces** (display), **IBM Plex Sans** (body), **IBM Plex Mono** (labels)
 - Shared chrome: hero, input, result panel, locked tally, paywall, trust line
-- One accent slot per tool (`--ggt-accent`)
+- One full-page colour theme per tool (`data-ggt-theme`), AA-checked
 - **No Tailwind**, no UI libraries
 
 ## Install from GitHub
@@ -52,8 +52,8 @@ const mono = IBM_Plex_Mono({
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
-      <body>{children}</body>
+    <html lang="en" data-ggt-theme="moss" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+      <body className="ggt-root">{children}</body>
     </html>
   );
 }
@@ -63,17 +63,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
 ```css
 @import "ggt-design-kit/src/index.css";
-
-/* Per-tool accent */
-:root {
-  --ggt-accent: #b08b4f; /* example: antique gold */
-}
 ```
 
 3. Mark up with kit classes:
 
 ```html
-<main class="ggt-root">
+<main>
   <div class="ggt-wrap">
     <header class="ggt-hero">
       <p class="ggt-eyebrow">Golden Goose Tools</p>
@@ -94,6 +89,33 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 </main>
 ```
 
+## Per-tool page themes
+
+Every tool page gets its own palette: a tinted page background, surfaces, headings, links and buttons all
+derive from one brand colour. Same fonts, same components; only colour tokens change.
+
+```tsx
+<html lang="en" data-ggt-theme="moss" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+```
+
+| Theme id | Brand colour | Tool |
+| --- | --- | --- |
+| `ember` | `#d4693f` | fix-it |
+| `lapis` | `#5f8bd1` | a11y-statement |
+| `moss` | `#7d9b7a` | quote-invoice |
+| `iris` | `#9b8ae0` | chat-to-pdf |
+| `wheat` | `#c4a27a` | cottage-food-labels |
+| `citron` | `#b8b94e` | listing-optimizer |
+| `verdigris` | `#5f8f88` | domain-ssl-report |
+| `plum` | `#8d6a7f` | maker-label-pack |
+
+Do not also set `--ggt-accent` in the tool: the theme owns it. A tool can still add its own overrides on
+`[data-ggt-theme="…"]` in its own CSS.
+
+**Add or change a theme:** edit `scripts/themes.config.mjs`, run `npm run build:themes`, commit
+`src/themes.css`. `npm test` fails if `themes.css` is stale or any pair misses WCAG AA
+(body and headings 7:1; secondary text, links, accent text and button labels 4.5:1; borders and focus rings 3:1).
+
 ## Tokens
 
 | Token | Role |
@@ -104,7 +126,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 | `--ggt-hairline` | Borders |
 | `--ggt-paper` | Primary text |
 | `--ggt-mist` | Muted text |
-| `--ggt-accent` | **Per-tool** accent (set in the tool) |
+| `--ggt-accent` | Brand colour (borders, focus ring); set by the theme |
+| `--ggt-accent-text` | Readable lighter accent for text (eyebrow, small labels) |
+| `--ggt-heading` | Headings |
+| `--ggt-link` / `--ggt-link-hover` | Links |
+| `--ggt-wash` | Paywall / highlighted panel background |
+| `--ggt-btn-bg` / `--ggt-btn-bg-hover` / `--ggt-btn-fg` | Buttons |
 | `--font-display` / `--font-sans` / `--font-mono` | Fonts from the host app |
 
 ## Rules
