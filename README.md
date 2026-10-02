@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 3. Mark up with kit classes:
 
 ```html
-<main class="ggt-root">
+<main>
   <div class="ggt-wrap">
     <header class="ggt-hero">
       <p class="ggt-eyebrow">Golden Goose Tools</p>
@@ -95,7 +95,7 @@ Every tool page gets its own palette: a tinted page background, surfaces, headin
 derive from one brand colour. Same fonts, same components; only colour tokens change.
 
 ```tsx
-<html lang="en" data-ggt-theme="moss" className={...fontVariables}>
+<html lang="en" data-ggt-theme="moss" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
 ```
 
 | Theme id | Brand colour | Tool |

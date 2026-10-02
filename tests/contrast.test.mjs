@@ -50,7 +50,8 @@ for (const t of THEMES) {
     min(v["ggt-accent-text"], surfaces, 4.5, "eyebrow / accent text");
     min(v["ggt-link"], surfaces, 4.5, "links");
     min(v["ggt-btn-fg"], [v["ggt-btn-bg"], v["ggt-btn-bg-hover"]], 4.5, "button label");
-    // Non-text: borders and focus rings need 3:1 against the page.
+    // Non-text: borders and focus rings need 3:1 against adjacent surfaces.
+    min(v["ggt-hairline"], surfaces, 3, "hairline border");
     min(v["ggt-accent"], [v["ggt-void"], v["ggt-ink"], v["ggt-slate"]], 3, "accent border / focus ring");
     min(v["ggt-btn-bg"], [v["ggt-void"]], 3, "button against page");
     // Status colours used as text on every surface.

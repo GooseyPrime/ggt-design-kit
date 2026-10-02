@@ -27,7 +27,7 @@ export function derive(theme) {
   const slate = hsl(bg, 27, 15);
   const paper = hsl(bg, 34, 94);
   const mist = rgbToHex(over(paper, slate, 0.74)); // opaque, so contrast is exact
-  const hairline = `${rgbToHex(over(paper, void_, 0.18))}`;
+  const hairline = lightenUntil(rgbToHex(over(paper, void_, 0.18)), slate, 3);
   const accentText = lightenUntil(theme.accent, slate, 6);
   const btnFg = hsl(bg, 40, 6);
   const btnBg = lightenUntil(theme.accent, btnFg, 6.2);
